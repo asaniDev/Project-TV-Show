@@ -6,21 +6,37 @@ function setup() {
 
 function makePageForEpisodes(episodeList) {
   const rootElem = document.getElementById("root");
-  rootElem.textContent = `Got ${episodeList.length} episode(s)`;
+  //rootElem.textContent = `Got ${episodeList.length} episode(s)`;
 
-  const card = document.createElement("div");
+  for (let episode of episodeList) {
+    const card = document.createElement("div");
+    card.classList.add("card");
 
-  const episodeName = document.createElement("h1");
-  episodeName.textContent =
-    episodeList[0].name +
-    " - " +
-    "S" +
-    episodeList[0].season.toString().padStart(2, "0") +
-    "E" +
-    episodeList[0].number.toString().padStart(2, "0");
+    const episodeName = document.createElement("h1");
+    episodeName.innerText = `${episode.name}
+  S${episode.season.toString().padStart(2, "0")}E${episode.number
+      .toString()
+      .padStart(2, "0")}`;
 
-  card.appendChild(episodeName);
-  rootElem.appendChild(card);
+    const image = document.createElement("img");
+    image.setAttribute("src", episode.image.medium);
+
+    const summary = document.createElement("p");
+    summary.innerHTML = episode.summary;
+
+    const credit = document.createElement("a");
+    credit.setAttribute("href", "https://tvmaze.com/");
+    credit.setAttribute("target", "blank");
+    credit.innerText = `[TVMaze.com]`;
+
+    //card.innerHTML = episodeList[0].summary;
+
+    card.appendChild(episodeName);
+    card.appendChild(image);
+    card.appendChild(summary);
+    card.appendChild(credit);
+    rootElem.appendChild(card);
+  }
 }
 
 window.onload = setup;
