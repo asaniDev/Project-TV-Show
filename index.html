@@ -9,16 +9,46 @@
   </head>
 
   <body>
-    <div class="controls">
-      <select id="showSelect">
+    <template id="showTemplate">
+      <div class="show-card">
+        <h2 class="show-title"><a href="#" class="show-link"></a></h2>
+        <p class="show-summary"></p>
+        <div class="show-info">
+          <img class="show-image" src="" alt="Show Image" />
+          <div class="show-details">
+            <p><strong>Genres:</strong> <span class="show-genres"></span></p>
+            <p><strong>Status:</strong> <span class="show-status"></span></p>
+            <p><strong>Rating:</strong> <span class="show-rating"></span></p>
+            <p><strong>Runtime:</strong> <span class="show-runtime"></span></p>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <section id="showsView">
+      <h1 class="tvShowTitle">TV Shows</h1>
+      <select id="showSelect" hidden>
         <option value="">Select a show</option>
       </select>
-      <select id="episodeSelect"></select>
-      <input type="search" id="searchInput" placeholder="Search episodes..." />
-      <p id="searchCount"></p>
-    </div>
-
-    <div id="root"></div>
+      <input type="search" id="showSearchInput" placeholder="Search shows..." />
+      <div id="showsContainer"></div>
+    </section>
+    <section id="episodesView" hidden>
+      <div class="controls">
+        <nav id="episodesNav">
+          <button id="backToShows" type="button">← Back to shows</button>
+        </nav>
+        <select id="episodeSelect"></select>
+        <input
+          type="search"
+          id="searchInput"
+          placeholder="Search episodes..."
+        />
+        <p id="searchCount"></p>
+      </div>
+      <div id="message" hidden></div>
+      <div id="root"></div>
+    </section>
 
     <!-- Loads YOUR javascript code -->
     <script src="script.js"></script>

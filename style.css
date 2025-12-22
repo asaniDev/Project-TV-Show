@@ -8,6 +8,96 @@
   box-sizing: border-box;
 }
 
+.tvShowTitle {
+  text-align: center;
+  font-size: 2rem;
+  margin: 16px;
+  padding: 10px;
+}
+
+#showSelect {
+  margin-bottom: 12px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #fff;
+  height: 40px;
+  box-sizing: border-box;
+}
+
+#showSearchInput {
+  margin-bottom: 12px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #fff;
+  height: 40px;
+  box-sizing: border-box;
+}
+
+#showsContainer {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  padding: 20px;
+  background-color: #e0e0e0;
+  box-sizing: border-box;
+}
+
+.show-card {
+  border: 1px solid #000;
+  padding: 16px;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: gray 2px 2px 5px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  height: 100%;
+  /* remove margin; grid gap handles spacing */
+  margin: 0 0 20px 0;
+}
+
+.show-link {
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.show-info {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+  justify-content: center;
+  align-items: center;
+}
+.show-image {
+  display: block;
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.show-summary {
+  font-size: 1rem;
+  line-height: 1.2;
+  text-align: center;
+  margin: 12px 0 0 0;
+  flex: 1 1 auto; /* allow summary to grow so cards match height */
+}
+.show-details {
+  display: block;
+  text-align: center;
+  margin-top: 12px;
+  font-size: 0.9rem;
+  color: #555;
+  text-decoration: none;
+}
+
 /* Card: fill the grid cell and use flex to make inner areas stretch */
 .card {
   border: 1px solid #000;
@@ -22,6 +112,12 @@
   height: 100%;
   /* remove margin; grid gap handles spacing */
   margin: 0;
+}
+
+#backToShows {
+  font-size: 1rem;
+  margin-bottom: 8px;
+  text-align: center;
 }
 
 h1 {
@@ -103,4 +199,3 @@ a {
   font-size: 0.95rem;
   color: #333;
 }
-
